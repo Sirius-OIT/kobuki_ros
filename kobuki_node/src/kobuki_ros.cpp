@@ -165,7 +165,7 @@ KobukiRos::KobukiRos(const rclcpp::NodeOptions & options) : rclcpp::Node("kobuki
 
   odom_broadcaster_= std::make_unique<tf2_ros::TransformBroadcaster>(this);
 
-  velocity_command_subscriber_ = this->create_subscription<geometry_msgs::msg::Twist>("commands/velocity", rclcpp::QoS(10), std::bind(&KobukiRos::subscribeVelocityCommand, this, std::placeholders::_1));
+  velocity_command_subscriber_ = this->create_subscription<geometry_msgs::msg::Twist>("cmd_vel", rclcpp::QoS(10), std::bind(&KobukiRos::subscribeVelocityCommand, this, std::placeholders::_1));
   led1_command_subscriber_ =  this->create_subscription<kobuki_ros_interfaces::msg::Led>("commands/led1", rclcpp::QoS(10), std::bind(&KobukiRos::subscribeLed1Command, this, std::placeholders::_1));
   led2_command_subscriber_ =  this->create_subscription<kobuki_ros_interfaces::msg::Led>("commands/led2", rclcpp::QoS(10), std::bind(&KobukiRos::subscribeLed2Command, this, std::placeholders::_1));
   digital_output_command_subscriber_ =  this->create_subscription<kobuki_ros_interfaces::msg::DigitalOutput>("commands/digital_output", rclcpp::QoS(10), std::bind(&KobukiRos::subscribeDigitalOutputCommand, this, std::placeholders::_1));
