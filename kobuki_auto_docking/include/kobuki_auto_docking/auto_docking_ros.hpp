@@ -39,7 +39,7 @@
 
 #include <kobuki_core/dock_drive.hpp>
 
-#include <tf2_geometry_msgs/tf2_geometry_msgs.hpp>
+#include <tf2_geometry_msgs/tf2_geometry_msgs.h>
 
 namespace kobuki_auto_docking
 {
