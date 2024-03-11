@@ -146,9 +146,9 @@ std::unique_ptr<nav_msgs::msg::Odometry> Odometry::getOdometry()
   odom->pose.pose.orientation = odom_quat_;
 
   // Velocity
-  odom->twist.twist.linear.x = pose_update_rates_[0];
-  odom->twist.twist.linear.y = pose_update_rates_[1];
-  odom->twist.twist.angular.z = pose_update_rates_[2];
+  // odom->twist.twist.linear.x = pose_update_rates_[0];
+  // odom->twist.twist.linear.y = pose_update_rates_[1];
+  // odom->twist.twist.angular.z = pose_update_rates_[2];
 
   // Pose covariance (required by robot_pose_ekf) TODO: publish realistic values
   // Odometry yaw covariance must be much bigger than the covariance provided
